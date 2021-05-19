@@ -1,7 +1,7 @@
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: hello
+  name: hello-cron
 spec:
   schedule: "*/1 * * * *"
   jobTemplate:
@@ -9,10 +9,10 @@ spec:
       template:
         spec:
           containers:
-          - name: hw
+          - name: hello-cron
             image: busybox
             args:
             - /bin/sh
             - -c
-            - echo Hello World!
+            - date; echo Hello from kubernetes cluster!
           restartPolicy: OnFailure

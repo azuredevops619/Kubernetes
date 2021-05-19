@@ -4,5 +4,5 @@ metadata:
   name: my-config
   namespace: default
 data:
-  mydata: hello_world
+  mydata: hello_kubernetes
 

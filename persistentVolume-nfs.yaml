@@ -10,5 +10,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     path: /opt/sfw
-    server: kubeadm-master
+    server: 52.251.122.125
     readOnly: false
