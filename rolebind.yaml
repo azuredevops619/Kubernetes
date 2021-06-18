@@ -5,7 +5,7 @@ metadata:
   namespace: development
 subjects:
 - kind: User
-  name: DevDan
+  name: jane
   apiGroup: ""
 roleRef:
   kind: Role
