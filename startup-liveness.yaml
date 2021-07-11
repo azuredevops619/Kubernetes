@@ -25,5 +25,4 @@ spec:
         path: /healthz
         port: liveness-port
       failureThreshold: 3
-      periodSeconds: 10
-                                                                                                                                     ~                          
+      periodSeconds: 10                      
