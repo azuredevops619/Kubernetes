@@ -1,37 +1,36 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: webapp-deployment
-  labels: 
-    app: webapp-deployment
+  name: metadata-deployment
+  labels:
+    app: metadata-deployment
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
-	  app: webapp-pod
+      app: metadata-pod
   template:
-    metadata: 
-	  labels:
-	    app: webapp-pod
-      spec:
-        containers:
-        - name: nginx-webapp
+    metadata:
+      labels:
+        app: metadata-pod
+    spec:
+      containers:
+      - name: nginx
         image: nginx:1.14.2
         ports:
-        - containerPorts: 80		
-		
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: webapp-service
+  name: metadata-service
   labels:
-    app: webapp-service
+    app: metadata-service
 spec:
   ports:
   - name: http
     port: 80
-	protocol: TCP
-	targetPort: 80
+    protocol: TCP
+    targetPort: 80
   selector:
-    app: webapp-pod
+    app: metadata-pod
