@@ -18,7 +18,7 @@ spec:
       - name: nginx-webapp
         image: nginx:1.14.2
         ports:
-        - containerPorts: 80		
+        - containerPort: 80		
 		
 ---
 apiVersion: v1
